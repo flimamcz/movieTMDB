@@ -1,0 +1,39 @@
+.header{
+    padding: 22px 0;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-header{
+    font-size: 1.6rem;
+    color: #202827;
+    display: block;
+    font-weight: 800;
+    background: linear-gradient(180deg, #81CBA8 0%, #09B5E1 100%);
+    padding: 12px 22px;
+    border-radius: 3px;
+}
+
+.btn-header:hover{
+    background: linear-gradient(240deg, #81CBA8 0%, #09B5E1 100%);
+    transition: .4s ease-out;
+    transform: scale(1.03);
+}
+.main-title{
+    margin-top: 22px;
+    text-align: center;
+    background-color: #EAE1E1;
+    padding: 16px;
+}
+
+
+.main-title h1{
+    font-size: 2.4rem;
+    color: #202827;
+}
+
+
