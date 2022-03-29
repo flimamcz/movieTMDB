@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useContext, useState } from "react";
+import { Fragment, useEffect, useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
 import Header from "./Header";
 import "../assets/styles/Home.css";
