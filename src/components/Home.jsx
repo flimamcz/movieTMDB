@@ -4,11 +4,10 @@ import {Link} from 'react-router-dom'
 import Header from "./Header";
 import "../assets/styles/Home.css";
 import Loading from "./Loading";
-
+import { API_KEY } from "../config/API_KEY";
 const Home = () => {
   const { request, data, loading } = useContext(GlobalContext);
-  const API_KEY = "api_key=06ae2dc755080f5934364ba0fb9232fb";
-  const BASE_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&${API_KEY}&language=pt-BR`;
+  const BASE_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&language=pt-BR`;
   const URL_IMG = `https://image.tmdb.org/t/p/w500`;
 
   useEffect(() => {
