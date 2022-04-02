@@ -10,8 +10,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+
 a{
     text-decoration: none;
+    color: var(--color-body);
 }
 
 li{
@@ -33,6 +35,8 @@ html{
 body{
     background: var(--color-body);
     color: var(--color-white-ice);
+    position: relative;
+    height: 100vh;
 }
 
 /* Container */

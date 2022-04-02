@@ -1,10 +1,14 @@
-.footer{
-    color: #202728;
-    font-size: 1.6rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
+.footer {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    width: 100%;
     background: linear-gradient(180deg, #88CCA5 0%, #05B4E3 100%);
+    padding: 16px 0;
+}
+
+.footer p {
+    font-size: 1.6rem;
+    color: #202827;
+    text-align: center;
 }

@@ -62,3 +62,7 @@
         gap: 30px;
     }
 }
+
+.movie img:hover{
+    opacity: 0.6;
+}

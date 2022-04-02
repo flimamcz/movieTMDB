@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
+import {Link} from 'react-router-dom'
 import Header from "./Header";
 import "../assets/styles/Home.css";
 import Loading from "./Loading";
@@ -25,15 +26,17 @@ const Home = () => {
         <div className="movies-container">
           {data &&
             data.results.map(
-              ({ title, vote_average, poster_path, overview, id }) => (
+              ({ title, vote_average, poster_path, id }) => (
                 <div key={title} className="item-movies">
                   <div className="movie">
-                    <img
-                      src={URL_IMG + poster_path}
-                      alt={title}
-                      width={200}
-                      height={250}
-                    />
+                    <Link to={`/details/${id}`} href="">
+                      <img
+                        src={URL_IMG + poster_path}
+                        alt={title}
+                        width={200}
+                        height={250}
+                      />
+                    </Link>
                   </div>
 
                   <div className="area-movie-bottom">
