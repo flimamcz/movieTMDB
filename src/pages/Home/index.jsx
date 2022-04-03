@@ -1,10 +1,11 @@
 import { Fragment, useEffect, useContext } from "react";
-import { GlobalContext } from "./GlobalContext";
+import { GlobalContext } from "../../components/GlobalContext";
 import {Link} from 'react-router-dom'
-import Header from "./Header";
-import "../assets/styles/Home.css";
-import Loading from "./Loading";
-import { API_KEY } from "../config/API_KEY";
+import Header from "../../components/Header"
+import Loading from "../../components/Loading";
+import { API_KEY } from "../../config/API_KEY";
+import { Container, MoviesContainer, AreaMovieDescription } from "./style";
+
 const Home = () => {
   const { request, data, loading } = useContext(GlobalContext);
   const BASE_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&language=pt-BR`;
@@ -12,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     async function getData() {
-      const response = request(BASE_URL);
+      const response = await request(BASE_URL);
     }
     getData();
   }, [request]);
@@ -20,9 +21,9 @@ const Home = () => {
   if (loading) return <Loading />;
   return (
     <Fragment>
-      <Header text="Página Inicial" />
-      <section className="container">
-        <div className="movies-container">
+      <Header text="Créditos" />
+      <Container>
+        <MoviesContainer>
           {data &&
             data.results.map(
               ({ title, vote_average, poster_path, id }) => (
@@ -38,23 +39,23 @@ const Home = () => {
                     </Link>
                   </div>
 
-                  <div className="area-movie-bottom">
+                  <AreaMovieDescription>
                     <p className="text-movie-bottom ">
-                      Avaliação:{" "}
+                      Nota:{" "}
                       <span
                         className="span-vote"
                         style={{ color: vote_average >= 6 ? "green" : "red" }}
                       >
-                        {vote_average}
+                        {vote_average.toFixed(1)}
                       </span>
                     </p>
                     <h1 className="text-movie-bottom">{title}</h1>
-                  </div>
+                  </AreaMovieDescription>
                 </div>
               )
             )}
-        </div>
-      </section>
+        </MoviesContainer>
+      </Container>
     </Fragment>
   );
 };

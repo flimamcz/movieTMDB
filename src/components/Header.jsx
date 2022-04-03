@@ -1,15 +1,16 @@
 import React from 'react'
 import Logo from '../assets/img/logo.svg'
 import '../assets/styles/Header.css'
+import {Link} from 'react-router-dom'
 
 const Header = ({text}) => {
   return (
     <header className='header'>
         <div className='container flex'>
-            <a className='logo ' href="/">
+            <Link to={'/'}>
                 <img src={Logo} alt="Logo the of The Movie Double Black " />
-            </a>
-            <a className='btn-header' href="/">{text}</a>
+            </Link>
+            <a className='btn-header' href={'https://www.themoviedb.org/'} target="_blank" rel='noopener noreferrer'>{text}</a>
         </div>
         
         <nav className='main-title'>

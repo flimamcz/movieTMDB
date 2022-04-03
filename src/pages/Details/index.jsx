@@ -1,22 +1,24 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "../assets/styles/Details.css";
+import Header from "../../components/Header";
+import Loading from "../../components/Loading";
+import { Container, MovieDetails, MovieImg, DetailsText } from "./style";
+
 const Details = () => {
+  const [movie, setMovie] = useState({});
+  const [loading, setLoading] = useState(null)
   const { id } = useParams();
   const API_KEY = "06ae2dc755080f5934364ba0fb9232fb";
-  const [movie, setMovie] = useState({});
   const image_path = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR`
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const { title, poster_path, release_date, overview, homepage } = data;
         const movie = {
           id,
@@ -28,18 +30,21 @@ const Details = () => {
         };
         setMovie(movie);
       });
+      setLoading(false)
   }, [id]);
+
+  if(loading) return <Loading />
 
   return (
     <div>
-      <Header text={"Página Inicial"} />
-      <div className="container">
-        <div className="movie_details">
-          <div className="movie_img">
+      <Header text={"Créditos"} />
+      <Container>
+        <MovieDetails>
+          <MovieImg>
             <img src={movie.image} alt={movie.title} />
-          </div>
+          </MovieImg>
 
-          <div className="details">
+          <DetailsText>
             <h1>{movie.title}</h1>
             <p>
               Sinopse: <span>{movie.sinopse}</span>
@@ -50,7 +55,7 @@ const Details = () => {
 
             <div className="buttons">
               <Link to={"/"}>
-                <button className="button">Página inicial</button>
+                <a className="button">Página inicial</a>
               </Link>
 
               <a
@@ -62,10 +67,9 @@ const Details = () => {
                 Página Oficial
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
+          </DetailsText>
+        </MovieDetails>
+      </Container>
     </div>
   );
 };
