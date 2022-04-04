@@ -13,6 +13,7 @@ O projeto consiste em um WebSite com a função de listar os filmes favoritos do
 #### Como rodar o projeto ?
 - Projeto criado com ViteJS
 - Instale as dependências com NPM INSTALL
+- crie uma pasta com nome "config" -> com arquivo API_KEY.jsx -> Dentro do arquivo faça: export const API_KEY = `SUA KEY DA API`
 - logo após execute o npm run dev e aproveite!
 
 
