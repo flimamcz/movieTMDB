@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: min(100%, 1260px);
   margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
 `;
 
 export const MovieDetails = styled.div`

@@ -12,6 +12,10 @@ export const MoviesContainer = styled.div`
   column-gap: 3rem;
   row-gap: 4rem;
   place-items: center;
+
+  img:hover{
+    opacity: 0.5;
+  }
 `;
 
 export const AreaMovieDescription = styled.div`
