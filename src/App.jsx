@@ -11,5 +11,4 @@ function App() {
 }
 
 
-// Finalizar Style Components + testar responsive and 2 column
 export default App;

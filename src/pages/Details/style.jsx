@@ -7,19 +7,33 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   height: 80vh;
+
+  @media (max-width: 640px){
+    width: min(90%);
+  }
 `;
 
 export const MovieDetails = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
-  margin: 20px;
   justify-content: center;
-`;
+
+  @media (max-width: 640px){
+    flex-direction: column;
+    gap: 30px;
+  }
+  `;
 
 export const MovieImg = styled.div`
   img {
     width: 250px;
+  }
+
+  @media (max-width: 640px){
+    img {
+      width: 200px;
+    }
   }
 `;
 
@@ -65,4 +79,32 @@ export const DetailsText = styled.div`
     transform: scale(1.05);
     transition: 0.3s;
   }
+
+  @media (max-width: 640px){
+    width: 80%;
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .release_date{
+      text-align: center;
+    }
+
+    p span{
+      display: block;
+    }
+
+    p span.sinopse{
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+
+    .buttons {
+      justify-content: center;
+    }
+  }
+
 `;
