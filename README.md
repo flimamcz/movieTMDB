@@ -11,6 +11,9 @@
 O projeto consiste em um WebSite com a função de listar os filmes favoritos do momento de acordo com sua pontuação (média de votos).
 
 #### Como rodar o projeto ?
+- Projeto criado com ViteJS
+- Instale as dependências com NPM INSTALL
+- logo após execute o npm run dev e aproveite!
 
 
 ### Referências
