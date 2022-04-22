@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   @media (max-width: 640px){
     width: min(90%);
+    margin-bottom: 32px;
   }
 `;
 
@@ -59,6 +60,7 @@ export const DetailsText = styled.div`
   .buttons {
     display: flex;
     gap: 20px;
+    margin-bottom: 32px;
   }
 
   .button {
