@@ -45,7 +45,7 @@ const Details = () => {
           <DetailsText>
             <h1>{movie.title}</h1>
             <p className="details_sinopse">
-              <span className="sinopse">Sinopse:</span> <span>{movie.sinopse}</span>
+              <span className="sinopse">Sinopse:</span> <span>{movie.sinopse ? movie.sinopse : 'Inexistente'}</span>
             </p>
             <p className="release_date">
               Data de lançamento: <span>{movie.releaseDate}</span>
