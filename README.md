@@ -1,6 +1,4 @@
-# TMDB - The Movie Double Black 1.0
-
-## Projeto desenvolvido com intuito de fixar os conhecimentos e adquirir experiência.
+# TMDB - The Movie Double Black 1.
 
 #### Tecnologias utilizadas
  - ReactJs
